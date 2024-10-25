@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -23,6 +24,6 @@ class CategorySeeder extends Seeder
             ['name' => 'Techno'],
             ['name' => 'Electro'],
         ];
-        DB::table('categories')->insert($categories);
+        Category::insert($categories);
     }
 }
