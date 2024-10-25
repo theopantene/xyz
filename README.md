@@ -1,4 +1,4 @@
-# XYZ
+# XYZ - PANTENE Théo
 
 <img src="docs/screenshots/home.png" alt="Page d'accueil" />
 
