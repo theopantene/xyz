@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Track;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -26,6 +27,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('app.categories.show', compact('category'));
+        $tracks = Track::whereCategoryId($category->id)->with('week')->paginate(10);
+        return view('app.categories.show', compact('tracks', 'category'));
     }
 }
