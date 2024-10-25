@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
@@ -14,16 +13,19 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'soul'],
-            ['name' => 'Ambient'],
-            ['name' => 'Pop'],
-            ['name' => 'Rap'],
-            ['name' => 'Funk'],
-            ['name' => 'Rock'],
-            ['name' => 'Reggae / Dub'],
-            ['name' => 'Techno'],
-            ['name' => 'Electro'],
+            'Soul',
+            'Ambient',
+            'Pop',
+            'Rap',
+            'Funk',
+            'Rock',
+            'Reggae / Dub',
+            'Techno',
+            'Electro'
         ];
-        Category::insert($categories);
+
+        foreach ($categories as $categoryName) {
+            Category::firstOrCreate(['name' => $categoryName]);
+        }
     }
 }

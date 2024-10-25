@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use App\Models\User;
 use App\Models\Week;
 use Illuminate\Database\Migrations\Migration;
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->string('player')->nullable();
             $table->string('player_track_id')->nullable();
             $table->string('player_thumbnail_url')->nullable();
+            $table->foreignIdFor(Category::class, 'category_id')->nullable()->constrained('categories')->onDelete('set null');
             $table->timestamps();
         });
     }

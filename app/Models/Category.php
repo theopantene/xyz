@@ -12,6 +12,7 @@ class Category extends Model
      *
      * @var array<int, string>
      */
+    use HasFactory;
     protected $fillable = [
         'name',
     ];
