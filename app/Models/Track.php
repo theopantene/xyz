@@ -20,6 +20,7 @@ class Track extends Model
     protected $fillable = [
         'title',
         'artist',
+        'category',
         'url',
     ];
 

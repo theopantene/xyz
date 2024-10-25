@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 
 class TrackController extends Controller
 {
+
     /**
      * Show given track.
      */
